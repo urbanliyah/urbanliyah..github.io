@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Fortune Awaits ✨</title>
+    <style>
+        body {
+            background-color: #1a001a;
+            color: #FFD700;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .fortune-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid gold;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px #FFD700;
+        }
+        h1 {
+            font-size: 28px;
+            text-shadow: 2px 2px 8px #ffcc00;
+        }
+        p {
+            font-size: 20px;
+            font-style: italic;
+        }
+        .reload-btn {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .reload-btn:hover {
+            background-color: #ffcc00;
+        }
+        .fortune-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔮 Your Fortune Awaits 🔮</h1>
+    <img src="fortunelady.png" alt="Fortune Image" class="fortune-image">
+    <div class="fortune-box">
+        <p id="fortune-text"></p>
+    </div>
+    <button class="reload-btn" onclick="showFortune()">🔄 Get Another Fortune</button>
+
+    <script>
+        const fortunes = [
+            "A golden opportunity is on the horizon—be ready!",
+            "Unexpectedly good luck will soon brighten your path.",
+            "Your energy attracts positive outcomes—stay open!",
+            "Serendipity is your secret power—watch for the signs.",
+            "A new habit will bring lasting vitality—start today.",
+            "Your body thrives when your mind finds peace.",
+            "Wellness is not a goal; it’s a journey—enjoy the ride.",
+            "Your glow comes from within—nurture it daily.",
+            "A passport stamp is in your near future—pack light!",
+            "Adventure calls—follow the road less traveled.",
+            "The best stories are waiting beyond your comfort zone.",
+            "A spontaneous trip will lead to a lifetime memory.",
+            "A heartwarming connection is closer than you think.",
+            "Your next great love story begins with self-love.",
+            "Someone special will enter your life when you least expect it.",
+            "Family bonds grow stronger with shared laughter.",
+            "Abundance flows where focus goes—dream big!",
+            "A wise financial decision will pay off soon.",
+            "Your hard work is paving the way for wealth.",
+            "Prosperity is drawn to those who take bold action.",
+            "The stars align in your favor—watch for signs.",
+            "A surprise awaits you in the near future.",
+            "The universe is guiding you toward a new path.",
+            "Your future is bright, filled with success.",
+            "An unexpected twist will bring great joy.",
+            "Change is on the horizon—embrace it!",
+            "A long-held wish is about to come true.",
+            "You will soon receive a message that changes everything.",
+            "Your destiny awaits—take that first step."
+        ];
+
+        function showFortune() {
+    const today = new Date();
+    const dayOfYear = Math.floor(
+        (today - new Date(today.getFullYear(), 0, 0)) / 86400000
+    ); // Get the day of the year (1-365)
+
+    const fortuneIndex = dayOfYear % fortunes.length; // Cycle through the list
+    document.getElementById("fortune-text").textContent = `"${fortunes[fortuneIndex]}"`;
+}
+
+// Show the daily fortune when the page loads
+showFortune();
+
+    </script>
+</body>
+</html>
